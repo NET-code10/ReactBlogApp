@@ -88,7 +88,7 @@ export async function ProfileLoader() {
     let res = await axios.get(API_PROFILE_AUTH, { withCredentials: true });
     console.log(res.data);
 
-    return res.data;
+    return redirect("/");
     
   } catch (er) {
     return redirect("/auth/login");
