@@ -160,7 +160,9 @@ export async function singupAction({ request }) {
 
   const data = Object.fromEntries(formData);
   try {
-    let res = await axios.post(API_REGISTER, data);
+    let res = await axios.post(API_REGISTER, data, {
+      withCredentials: true,
+    });
     console.log(res.data);
     return res.data;
   } catch (error) {
@@ -172,7 +174,9 @@ export async function loginAction({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
-    let res = await axios.post(API_LOGIN, data);
+    let res = await axios.post(API_LOGIN, data, {
+      withCredentials: true,
+    });
     console.log(res.data)
     return res.data;
   } catch (error) {
