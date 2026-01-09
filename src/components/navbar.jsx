@@ -49,7 +49,9 @@ const Navbar = () => {
             </li>
 
             <li className=""></li>
-            <CircleUser onClick={() => navigateTo("/profile")} />
+            <Link to={"/profile"}>
+              <CircleUser />
+            </Link>
 
             <Link to={"/auth/sign-up"}>
               <Button
