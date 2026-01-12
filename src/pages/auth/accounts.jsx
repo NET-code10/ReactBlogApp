@@ -2,7 +2,7 @@ const API_REGISTER = import.meta.env.VITE_API_REGIESTER;
 const API_LOGIN = import.meta.env.VITE_API_LOGIN;
 
 import React from "react";
-import { Link, Form } from "react-router-dom";
+import { Link, Form, redirect } from "react-router-dom";
 import {
   User,
   Mail,
@@ -163,11 +163,11 @@ export async function singupAction({ request }) {
     let res = await axios.post(API_REGISTER, data, {
       withCredentials: true,
     });
-    console.log(res.data);
-    return res.data;
+
+    return redirect("https://reactblogapp-2r9t.onrender.com/profile");
   } catch (error) {
     console.log(error.message);
-     console.log(error.response);
+    console.log(error.response);
   }
 }
 export async function loginAction({ request }) {
@@ -177,8 +177,8 @@ export async function loginAction({ request }) {
     let res = await axios.post(API_LOGIN, data, {
       withCredentials: true,
     });
-    console.log(res.data)
-    return res.data;
+
+    return redirect("https://reactblogapp-2r9t.onrender.com/profile");
   } catch (error) {
     console.log(error.message);
     console.log(error.response);
